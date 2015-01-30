@@ -14,26 +14,26 @@ end
 
 loop do
 
-begin
-puts "Choose one: (R/P/S)"
-player_choice = gets.chomp.downcase
-end until options.include?(player_choice)
+  begin
+    puts "Choose one: (R/P/S)"
+    player_choice = gets.chomp.downcase
+  end until options.include?(player_choice)
 
-comp_choice = options.sample
-puts "The computer chose #{comp_choice}"
+  comp_choice = options.sample
+  puts "The computer chose #{comp_choice}"
 
-if player_choice == comp_choice
-  puts "You have tied!"
-elsif (player_choice == 'r' && comp_choice == 's') || (player_choice == 's' && comp_choice == 'p') || (player_choice == 'p' && comp_choice == 'r')
-  winning_message(player_choice)
-  puts "You win!"
-else
-  winning_message(comp_choice)
-  puts "Computer wins! :( "
-end
+  if player_choice == comp_choice
+    puts "You have tied!"
+  elsif (player_choice == 'r' && comp_choice == 's') || (player_choice == 's' && comp_choice == 'p') || (player_choice == 'p' && comp_choice == 'r')
+    winning_message(player_choice)
+    puts "You win!"
+  else
+    winning_message(comp_choice)
+    puts "Computer wins! :( "
+  end
 
-puts "Play again? (y/n)"
-break if gets.chomp.downcase != 'y'
+  puts "Play again? (y/n)"
+  break if gets.chomp.downcase != 'y'
 
 end
 
